@@ -1,0 +1,37 @@
+<div class="row row-cols-1 row-cols-md-4 g-4 p-5">
+  <!-- <ng-container *ngFor="let prd of products"> -->
+  @for(prd of filteredProducts;track prd.id) { @if(prd.quantity != 0) {
+  <div class="col">
+    <div class="card" appProductCard="yellow">
+      <img [src]="prd.imgUrl" class="card-img-top" alt="..." />
+      <div class="card-body" [ngClass]="prd.quantity == 1 ? 'bg-danger' : ''">
+        <h5 class="card-title">{{ prd.name }}</h5>
+        <p class="card-text">Price: {{ prd.price }}</p>
+        <p class="card-text" *ngIf="prd.quantity != 1; else lastItem">
+          Quantity: {{ prd.quantity }}
+        </p>
+        <ng-template #lastItem>
+          <p class="card-text">Quantity : Last item</p>
+        </ng-template>
+        <button
+          class="btn btn-success ms-5"
+          (click)="navigateToDetails(prd.id)"
+        >
+          Details
+        </button>
+        <button class="btn btn-danger ms-5" (click)="deleteProduct(prd.id)">
+          Delete
+        </button>
+        <button class="btn btn-primary ms-5" (click)="updateProduct(prd.id)">
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+  } }@empty {
+  <h1>No Products</h1>
+  }
+  <!-- </ng-container
+  > -->
+</div>
+<h3>{{ nationalId | nationalId : "FullDate" }}</h3>

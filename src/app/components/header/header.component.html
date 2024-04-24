@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/home"
+            routerLinkActive="bg-primary rounded-5"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          @if (isUserLoggedIn) {
+          <a
+            class="nav-link"
+            routerLink="/order"
+            routerLinkActive="bg-primary rounded-5"
+            >Products</a
+          >
+          } @else {
+          <a
+            class="nav-link"
+            routerLink="/Products"
+            routerLinkActive="bg-primary rounded-5"
+            >Products</a
+          >
+          }
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/About"
+            routerLinkActive="bg-primary rounded-5"
+            >About Us</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/AddProduct"
+            routerLinkActive="bg-primary rounded-5"
+            >Add Product</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/register"
+            routerLinkActive="bg-primary rounded-5"
+            >register</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link bg-danger rounded-3"
+            routerLink="/Login"
+            routerLinkActive="bg-primary rounded-5"
+          >
+            <span *ngIf="!isUserLoggedIn">Login</span>
+            <span *ngIf="isUserLoggedIn">Logout</span>
+          </a>
+        </li>
+        <p>{{ counter | async }}</p>
+        <button class="btn btn-primary" (click)="changeLang()">
+          Change Language
+        </button>
+      </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

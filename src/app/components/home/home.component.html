@@ -1,0 +1,9 @@
+<!-- @for (noti of notifications;track noti) {
+<div>
+  <h1>{{ noti }}</h1>
+  <button class="btn btn-danger" (click)="remove(noti)">remove</button>
+</div>
+} -->
+<p>Counter is {{ counter | async }}</p>
+<button class="btn btn-success" (click)="increaseVal()">+</button>
+<button class="btn btn-danger" (click)="decreaseVal()">-</button>

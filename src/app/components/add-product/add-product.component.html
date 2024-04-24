@@ -1,0 +1,102 @@
+<h1>{{ prdName.errors | json }}</h1>
+<div class="container-fluid d-flex justify-content-center">
+  <form
+    class="col-6 mt-5"
+    (submit)="currentId ? updateProduct() : addNewProduct()"
+    #addProdForm="ngForm"
+  >
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        [(ngModel)]="newProduct.name"
+        name="name"
+        required
+        pattern="^[a-zA-Z]{3,15}$"
+        #prdName="ngModel"
+      />
+      @if (prdName.invalid && prdName.touched) {
+      <div class="text-danger">
+        @if(prdName.errors?.['required']) {
+        <p>*required</p>
+        } @if(prdName.errors?.['pattern']) {
+        <p>*Name must be at least 3 characters</p>
+        }
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputPassword1"
+        [(ngModel)]="newProduct.price"
+        name="price"
+        required
+        #prdPrice="ngModel"
+      />@if (prdPrice.touched && prdPrice.errors?.['required']) {
+      <div class="text-danger">
+        <p>*required</p>
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Quantity:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="exampleInputPassword1"
+        [(ngModel)]="newProduct.quantity"
+        name="quantity"
+        required
+        #prdQuantity="ngModel"
+      />
+      @if (prdQuantity.touched && prdQuantity.errors?.['required']) {
+      <div class="text-danger">
+        <p>*required</p>
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Image:</label>
+      <input
+        type="file"
+        class="form-control"
+        id="exampleInputPassword1"
+        [(ngModel)]="newProduct.imgUrl"
+        name="imgUrl"
+        required
+        #prdImg="ngModel"
+      />@if (prdImg.touched && prdImg.errors?.['required']) {
+      <div class="text-danger">
+        <p>*required</p>
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label"></label>
+      <select
+        name=""
+        id=""
+        class="form-select"
+        [(ngModel)]="newProduct.categoryId"
+        name="categoryId"
+      >
+        @for (cat of categories; track cat.id) {
+        <option [value]="cat.id">{{ cat.name }}</option>
+        }
+      </select>
+    </div>
+    <button
+      type="submit"
+      [disabled]="addProdForm.invalid"
+      class="btn btn-primary"
+    >
+      Submit
+    </button>
+  </form>
+</div>

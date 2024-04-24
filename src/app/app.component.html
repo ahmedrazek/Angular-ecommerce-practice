@@ -1,0 +1,17 @@
+<div [dir]="dir">
+  <app-header></app-header>
+
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-1 px-sm-2 px-0">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col py-3">
+        <app-spinner></app-spinner>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

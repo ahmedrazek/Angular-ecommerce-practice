@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "price": 5000,
+      "categoryId": 1,
+      "quantity": 5,
+      "name": "Iphone",
+      "imgUrl": "https://fakeimg.pl/300/"
+    },
+    {
+      "id": "2",
+      "price": 7000,
+      "categoryId": 1,
+      "quantity": 5,
+      "name": "huawei",
+      "imgUrl": "C:\\fakepath\\charlie-green-3JmfENcL24M-unsplash.jpg"
+    },
+    {
+      "id": "3",
+      "price": 5000,
+      "categoryId": 1,
+      "quantity": 6,
+      "name": "oppo",
+      "imgUrl": "https://fakeimg.pl/300/"
+    },
+    {
+      "id": "4",
+      "price": 5000,
+      "categoryId": 1,
+      "quantity": 3,
+      "name": "xiaomi",
+      "imgUrl": "https://fakeimg.pl/300/"
+    },
+    {
+      "id": "5",
+      "price": 10000,
+      "categoryId": 2,
+      "quantity": 5,
+      "name": "Hp laptop",
+      "imgUrl": "https://fakeimg.pl/300/"
+    },
+    {
+      "id": "6",
+      "price": 20000,
+      "categoryId": 2,
+      "quantity": 6,
+      "name": "Dell laptop",
+      "imgUrl": "https://fakeimg.pl/300/"
+    },
+    {
+      "id": "7",
+      "price": 60000,
+      "categoryId": 2,
+      "quantity": 4,
+      "name": "Asus Laptop",
+      "imgUrl": "https://fakeimg.pl/300/"
+    },
+    {
+      "id": "8",
+      "price": 5000,
+      "categoryId": 3,
+      "quantity": 7,
+      "name": "Ipad",
+      "imgUrl": "https://fakeimg.pl/300/"
+    },
+    {
+      "id": "9",
+      "name": "wdccwec",
+      "price": 2343244,
+      "quantity": 555,
+      "imgUrl": "C:\\fakepath\\dentist-making-professional-teeth-cleaning-withb-cotton-female-young-patient-dental-office.jpg",
+      "categoryId": "3"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Mobile",
+      "id": "1"
+    },
+    {
+      "name": "Laptop",
+      "id": "2"
+    },
+    {
+      "name": "Tablet",
+      "id": "3"
+    }
+  ]
+}
